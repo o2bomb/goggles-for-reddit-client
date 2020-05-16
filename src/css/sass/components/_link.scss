@@ -1,0 +1,19 @@
+link {
+    &:link {
+        color: $color-secondary;
+        text-decoration: none;
+    }
+
+    &:visited {
+        color: $color-tertiary-light;
+    }
+    
+    &:hover {
+        color: $color-tertiary-light;
+        text-decoration: underline;
+    }
+
+    &:active {
+        color: $color-primary;
+    }
+}

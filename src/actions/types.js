@@ -1,0 +1,5 @@
+export const FETCH_USER = "FETCH_USER";
+export const FETCH_FRONTPAGE = "FETCH_FRONTPAGE";
+export const FETCH_SUBREDDIT = "FETCH_SUBREDDIT";
+export const SHOW_TOAST = "SHOW_TOAST";
+export const HIDE_TOAST = "HIDE_TOAST";

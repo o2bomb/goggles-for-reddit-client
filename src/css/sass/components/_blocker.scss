@@ -1,0 +1,20 @@
+.blocker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 5500;
+
+    transition: all .5s;
+    visibility: hidden;
+    background-color: rgba($color-black, 0);
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+}
+
+.blocker.show {
+    visibility: visible;
+    background-color: rgba($color-black, .5);
+}

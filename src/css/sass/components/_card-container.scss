@@ -1,0 +1,17 @@
+.card-container {
+    display: block;
+    text-align: center;
+
+    .wrapper {
+        display: inline-flex;
+        flex-direction: column;
+
+        &:first-child {
+            margin-top: 8rem;
+        }
+    }
+
+    .progress-indicator {
+        margin: 2rem;
+    }
+}
