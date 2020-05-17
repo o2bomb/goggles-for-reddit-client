@@ -31,6 +31,15 @@ const CardText = ({ id, distinguished, selftext_html, title, subreddit_name_pref
     </div>
   );
 
+  const content = selftext_html ? (
+    <div className={`card__content ${toggleContent ? "shorten" : ""}`}>
+      {toggleElement}
+      <div dangerouslySetInnerHTML={{ __html: htmlDecode(selftext_html) }} className={`post-text ${toggleContent ? "show" : "hide"}`}>
+        {/* Markdown is inserted here */}
+      </div>
+    </div>
+  ) : null;
+
   const nsfwTag = (<div className="tag tag--nsfw">NSFW</div>);
   const spoilerTag = (<div className="tag tag--spoiler">Spoiler</div>);
   return (
@@ -47,12 +56,7 @@ const CardText = ({ id, distinguished, selftext_html, title, subreddit_name_pref
             {title}
           </h1>
         </a>
-        <div className={`card__content ${toggleContent ? "shorten" : ""}`}>
-          {toggleElement}
-          <div dangerouslySetInnerHTML={{ __html: htmlDecode(selftext_html) }} className={`post-text ${toggleContent ? "show" : "hide"}`}>
-            {/* Markdown is inserted here */}
-          </div>
-        </div>
+        {content}
         <div className="card__footer--links">
           <div className="tag-group">
             {over_18 ? nsfwTag : null}
