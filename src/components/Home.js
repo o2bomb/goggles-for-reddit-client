@@ -6,20 +6,27 @@ import CardContainer from "./CardContainer";
 
 class Home extends Component {
   componentDidMount() {
-    const { match, fetchSubreddit } = this.props;
-
-    fetchSubreddit(match.params.id, match.params.type, match.params.time);
+    this.updateContent();
   }
 
   componentDidUpdate() {
-    const { match, fetchSubreddit } = this.props;
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: "smooth"
     });
 
-    fetchSubreddit(match.params.id, match.params.type, match.params.time);
+    this.updateContent();
+  }
+
+  updateContent() {
+    const { match, fetchSubreddit } = this.props;
+
+    if (match.params.x === "r") {
+      fetchSubreddit(match.params.y, match.params.z, match.params.v);
+    } else {
+      fetchSubreddit(null, match.params.x, match.params.y);
+    }
   }
 
   render() {

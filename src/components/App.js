@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../actions";
 
@@ -20,12 +20,15 @@ class App extends Component {
       <BrowserRouter>
         <Header />
         <ToTop />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/r/:id" component={Home} />
-        <Route exact path="/r/:id/:type" component={Home} />
-        <Route exact path="/r/:id/:type/:time" component={Home} />
-        <Route exact path="/vault" component={Vault} />
-        <Route exact path="/settings" component={Settings} />
+        <Switch>
+          <Route exact path="/vault" component={Vault} />
+          <Route exact path="/settings" component={Settings} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/:x" component={Home} />
+          <Route exact path="/:x/:y" component={Home} />
+          <Route exact path="/:x/:y/:z" component={Home} />
+          <Route exact path="/:x/:y/:z/:v" component={Home} />
+        </Switch>
         <ToastContainer />
       </BrowserRouter>
     )

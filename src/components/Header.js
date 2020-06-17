@@ -16,9 +16,9 @@ class Header extends Component {
     return (
       <header id="header" className="header">
         <ul className="nav">
-          <li className={`nav-item ${rootPath === "" || rootPath === "r" ? "current" : ""}`}>
+          <li className={`nav-item ${rootPath !== "vault" && rootPath !== "settings" ? "current" : ""}`}>
             <Link tooltip="Home" className={`link-container tooltip-bottom`} to="/" tabIndex="1">
-              {rootPath === "" || rootPath === "r" ? <HomeFilled className="icon" /> : <HomeOutlined className="icon" />}
+              {rootPath !== "vault" && rootPath !== "settings" ? <HomeFilled className="icon" /> : <HomeOutlined className="icon" />}
             </Link>
           </li>
           <li className={`nav-item ${rootPath === "vault" ? "current" : ""}`}>
