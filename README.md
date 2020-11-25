@@ -5,8 +5,6 @@ This is the frontend React app that pulls and displays content from [reddit](htt
 
 This is my first ever React project. Made with love ❤.
 
-**Note:** I will not be make the code for the backend public, for security reasons.
-
 ## Stack
 **Framework:** React with Redux
 
